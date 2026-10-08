@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FineCtrl-TTS audio demo: fine-grained style, pace, and non-verbal event control for customer-service speech synthesis.">
+  <meta name="theme-color" content="#070b1a">
+  <title>FineCtrl-TTS — Fine-grained Control for Customer-service Speech</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="FineCtrl-TTS home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>FineCtrl<span class="brand-muted">—TTS</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#overview">Overview</a>
+      <a href="#method">Method</a>
+      <a href="#samples">Audio samples</a>
+      <a href="#results">Results</a>
+    </nav>
+    <a class="header-link" href="https://github.com/JustKowalski/FineCtrl-TTS">GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">ICASSP 2027 · Audio demo</p>
+        <h1>Every service turn,<br><span>precisely in character.</span></h1>
+        <p class="hero-lede">FineCtrl-TTS brings utterance-level style and pace together with token-aligned non-verbal events—making customer-service speech more controllable, contextual, and human.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#samples">Explore audio samples <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#method">How it works</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>30</dt><dd>audio samples</dd></div>
+          <div><dt>4</dt><dd>speaker voices</dd></div>
+          <div><dt>5</dt><dd>event types</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual" aria-label="FineCtrl-TTS combines global instructions and local event tags">
+        <div class="visual-glow"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+        <div class="visual-core">
+          <span>FineCtrl</span>
+          <strong>TTS</strong>
+        </div>
+        <div class="floating-chip chip-style"><span></span>Style</div>
+        <div class="floating-chip chip-pace"><span></span>Pace</div>
+        <div class="floating-chip chip-event"><span></span>NV events</div>
+        <div class="signal-panel">
+          <div class="signal-meta"><span>Fine-grained synthesis</span><b>LIVE</b></div>
+          <div class="waveform" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p>好的 <mark>[mn]</mark>，感谢您的理解！ <mark>[breath]</mark></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-band" id="overview">
+      <div class="section-shell intro-grid">
+        <p class="section-kicker">Why FineCtrl-TTS</p>
+        <div>
+          <h2>Naturalness is more than sounding clean.</h2>
+          <p>Customer-service speech must fit the role, carry the intended attitude, and place breaths, filled pauses, laughter, and emphasis exactly where they belong. Conventional quality and speaker-similarity metrics leave these behaviors largely unmeasured.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="control-section section-shell" id="method">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Control at every granularity</p>
+          <h2>From the whole conversation<br>down to a single breath.</h2>
+        </div>
+        <p>FineCtrl-TTS uses complementary control channels at different temporal scales, then evaluates each behavior with ContextualHL.</p>
+      </div>
+
+      <div class="control-grid">
+        <article class="control-card card-dialogue">
+          <div class="card-index">01</div>
+          <div class="control-icon"><span class="dialogue-dot"></span><span class="dialogue-line"></span><span class="dialogue-line short"></span></div>
+          <p class="card-label">Dialogue level</p>
+          <h3>Stay in context</h3>
+          <p>Deliver each turn with scenario-appropriate emotion, timing, spontaneity, and conversational flow.</p>
+        </article>
+        <article class="control-card card-utterance">
+          <div class="card-index">02</div>
+          <div class="control-icon instruction-icon"><span>Warm</span><span>Fast</span></div>
+          <p class="card-label">Utterance level</p>
+          <h3>Set style and pace</h3>
+          <p>Natural-language instructions describe the service role, audible delivery, affect, and speaker-relative pace.</p>
+        </article>
+        <article class="control-card card-token">
+          <div class="card-index">03</div>
+          <div class="control-icon token-icon"><span>Text</span><b>[mn]</b><span>Text</span></div>
+          <p class="card-label">Token level</p>
+          <h3>Place local events</h3>
+          <p>Inline tags align breaths, filled pauses, laughter, and emphasis to precise positions in the transcript.</p>
+        </article>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipeline-label">One model-agnostic pipeline</div>
+        <div class="pipeline-flow">
+          <span>Production speech</span><i>→</i><span>Quality-controlled data</span><i>→</i><span>Fine-grained prompts</span><i>→</i><span>ContextualHL</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="samples-section" id="samples">
+      <div class="section-shell">
+        <div class="section-heading samples-heading">
+          <div>
+            <p class="section-kicker">Listen side by side</p>
+            <h2>Hear what fine-grained<br>control changes.</h2>
+          </div>
+          <p>Each example compares the same speaker and transcript under three training and inference conditions. Headphones are recommended.</p>
+        </div>
+
+        <div class="listening-guide">
+          <span class="guide-title">Compare</span>
+          <div><i class="legend-dot base"></i><strong>BASE</strong><small>clean text</small></div>
+          <div><i class="legend-dot prompt"></i><strong>BASE + Style Prompt</strong><small>global instruction</small></div>
+          <div><i class="legend-dot finectrl"></i><strong>FineCtrl-TTS</strong><small>global + local control</small></div>
+        </div>
+
+        <div class="reference-wrap">
+          <div class="reference-copy">
+            <p class="section-kicker">Voice references</p>
+            <h3>Four voices, shared across every condition.</h3>
+          </div>
+          <div class="reference-grid" id="reference-grid"></div>
+        </div>
+
+        <div class="sample-toolbar">
+          <div class="sample-tabs" role="group" aria-label="Filter audio samples by dataset">
+            <button class="sample-tab active" type="button" data-filter="all" aria-pressed="true">All samples <span>10</span></button>
+            <button class="sample-tab" type="button" data-filter="realworld" aria-pressed="false">RealWorld <span>7</span></button>
+            <button class="sample-tab" type="button" data-filter="seedbench" aria-pressed="false">SeedBench <span>3</span></button>
+          </div>
+          <p><span class="toolbar-count">30</span> model outputs</p>
+        </div>
+
+        <div id="sample-list"></div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results">
+      <div class="results-glow"></div>
+      <div class="section-shell results-inner">
+        <div class="results-heading">
+          <div>
+            <p class="section-kicker light">ContextualHL evaluation</p>
+            <h2>The difference becomes visible<br>when we measure behavior.</h2>
+          </div>
+          <p>FineCtrl-TTS improves style adherence, non-verbal event realization, and dialogue delivery while conventional quality metrics remain nearly unchanged.</p>
+        </div>
+
+        <div class="result-hero-grid">
+          <article class="result-hero-card">
+            <div class="result-card-top"><span>FineCustomer-RealWorld</span><small>ContextualHL Avg.</small></div>
+            <div class="metric-change"><span>0.54</span><i>→</i><strong>0.78</strong></div>
+            <div class="metric-track"><span style="--from:54%;--to:78%"></span></div>
+            <p>BASE <i></i> FineCtrl-TTS</p>
+          </article>
+          <article class="result-hero-card accent">
+            <div class="result-card-top"><span>FineCustomer-SeedBench</span><small>ContextualHL Avg.</small></div>
+            <div class="metric-change"><span>0.43</span><i>→</i><strong>0.74</strong></div>
+            <div class="metric-track"><span style="--from:43%;--to:74%"></span></div>
+            <p>BASE <i></i> FineCtrl-TTS</p>
+          </article>
+        </div>
+
+        <div class="dimension-grid">
+          <article><span>S</span><div><strong>Style</strong><p>Does the whole turn match the requested role, affect, and pace?</p></div></article>
+          <article><span>N</span><div><strong>Non-verbal</strong><p>Are events realized naturally, with the right type and position?</p></div></article>
+          <article><span>D</span><div><strong>Dialogue</strong><p>Does the utterance sound spontaneous and appropriate in context?</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section-shell">
+      <p class="section-kicker">FineCtrl-TTS</p>
+      <h2>Fine-grained evaluation and control<br>for customer-service speech synthesis.</h2>
+      <p>A model-agnostic framework for building speech that is not only clear and speaker-consistent, but behaviorally right for the conversation.</p>
+      <a class="button button-dark" href="https://github.com/JustKowalski/FineCtrl-TTS">View project on GitHub <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <div class="brand footer-brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>FineCtrl<span class="brand-muted">—TTS</span></span></div>
+      <p>Research audio samples for academic demonstration.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
